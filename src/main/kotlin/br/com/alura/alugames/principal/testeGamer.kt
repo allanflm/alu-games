@@ -1,6 +1,5 @@
-package br.com.alugames.principal
-import br.com.alugames.modelo.Gamer
-
+package br.com.alura.alugames.principal
+import br.com.alura.alugames.modelo.Gamer
 fun main() {
     val gamer1 = Gamer("Jacque", "jacque@email.com")
     println(gamer1)

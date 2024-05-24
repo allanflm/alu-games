@@ -1,6 +1,6 @@
-package br.com.alugames.servicos
+package br.com.alura.alugames.servicos
 
-import br.com.alugames.modelo.InfoJogo
+import br.com.alura.alugames.modelo.InfoJogo
 import com.google.gson.Gson
 import java.net.URI
 import java.net.http.HttpClient
@@ -9,7 +9,7 @@ import java.net.http.HttpResponse
 
 class ConsumoApi {
 
-    fun buscaJogo(id: String): InfoJogo {
+    fun buscaJogo(id:String): InfoJogo {
         val endereco = "https://www.cheapshark.com/api/1.0/games?id=$id"
 
         val client: HttpClient = HttpClient.newHttpClient()

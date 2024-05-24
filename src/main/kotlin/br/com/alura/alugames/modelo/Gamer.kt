@@ -1,4 +1,4 @@
-package br.com.alugames.modelo
+package br.com.alura.alugames.modelo
 
 import java.util.Scanner
 import kotlin.random.Random

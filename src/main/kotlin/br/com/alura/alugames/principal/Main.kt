@@ -1,10 +1,10 @@
-package br.com.alugames.principal
+package br.com.alura.alugames.principal
 
-import br.com.alugames.modelo.Gamer
-import br.com.alugames.modelo.Jogo
-import br.com.alugames.servicos.ConsumoApi
+import br.com.alura.alugames.modelo.Gamer
+import br.com.alura.alugames.modelo.Jogo
+import br.com.alura.alugames.servicos.ConsumoApi
+import java.util.Scanner
 import tranformarEmIdade
-import java.util.*
 
 
 fun main() {
