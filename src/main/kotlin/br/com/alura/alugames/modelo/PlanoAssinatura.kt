@@ -1,7 +1,12 @@
 package br.com.alura.alugames.modelo
 
 class PlanoAssinatura(
-    tipo :String,
-    val mensalidade: Double,
+    tipo: String,
+    val mesalidade: Double,
     val jogosIncluidos: Int
-) : Plano(tipo)
+) : Plano(tipo) {
+
+    override fun obterValor(aluguel: Aluguel): Double {
+
+    }
+}
