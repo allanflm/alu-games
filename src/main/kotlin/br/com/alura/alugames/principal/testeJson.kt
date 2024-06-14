@@ -31,13 +31,16 @@ fun main() {
     gamerCaroline.alugaJogo(jogoTheLastOfUs, periodo3)
     gamerCaroline.alugaJogo(jogoSpider, periodo4)
 
-    println(gamerCaroline.jogosAlugados)
+//    println(gamerCaroline.jogosAlugados)
 
     val gamerCamila = listaGamers.get(5)
     gamerCamila.plano = PlanoAssinatura("PRATA", 9.90, 3)
+
     gamerCamila.alugaJogo(jogoResidentVillage, periodo1)
     gamerCamila.alugaJogo(jogoSpider, periodo2)
     gamerCamila.alugaJogo(jogoTheLastOfUs, periodo3)
+    gamerCamila.alugaJogo(jogoTheLastOfUs, periodo3)
+
     println(gamerCamila.jogosAlugados)
 
 }
