@@ -3,6 +3,8 @@ package br.com.alura.alugames.principal
 import br.com.alura.alugames.modelo.Periodo
 import br.com.alura.alugames.modelo.PlanoAssinatura
 import br.com.alura.alugames.servicos.ConsumoApi
+import com.google.gson.GsonBuilder
+import java.io.File
 import java.time.LocalDate
 
 fun main() {
@@ -64,11 +66,11 @@ fun main() {
     gamerCamila.recomendarJogo(jogoSkyrim, 8)
     gamerCamila.recomendarJogo(jogoSpider, 6)
 
-    println("Recomendações Camilas")
-    println(gamerCamila.jogosRecomendados)
 
-    println("Recomendações Caroline")
-    println(gamerCaroline.jogosRecomendados)
+    val gson = GsonBuilder().excludeFieldsWithoutExposeAnnotation().create()
+    val serializacao = gson.toJson(gamerCamila.jogosRecomendados)
 
-
+    val arquivo = File("JogosRecomendados.json")
+    arquivo.writeText(serializacao)
+    println(arquivo.absolutePath)
 }
