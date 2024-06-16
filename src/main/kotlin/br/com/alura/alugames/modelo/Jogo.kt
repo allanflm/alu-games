@@ -1,5 +1,6 @@
 package br.com.alura.alugames.modelo
 
+import br.com.alura.alugames.utilitario.formatoComDuasCasasDecimais
 import com.google.gson.annotations.Expose
 
 data class Jogo(
@@ -12,7 +13,7 @@ data class Jogo(
     private val listaNotas = mutableListOf<Int>()
 
     override val media: Double
-        get() = listaNotas.average()
+        get() = listaNotas.average().formatoComDuasCasasDecimais()
 
 
     override fun recomendar(nota: Int) {
