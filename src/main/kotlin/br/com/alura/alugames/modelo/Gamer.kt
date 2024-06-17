@@ -1,9 +1,10 @@
 package br.com.alura.alugames.modelo
+
+import java.time.LocalDate
 import java.util.Scanner
 import kotlin.random.Random
 
-data class Gamer(var nome:String, var email:String) : Recomandavel {
-
+data class Gamer(var nome:String, var email:String): Recomendavel {
     var dataNascimento:String? = null
     var usuario:String? = null
         set(value) {
@@ -12,19 +13,20 @@ data class Gamer(var nome:String, var email:String) : Recomandavel {
                 criarIdInterno()
             }
         }
+    var id = 0
     var idInterno:String? = null
         private set
     var plano: Plano = PlanoAvulso("BRONZE")
     val jogosBuscados = mutableListOf<Jogo?>()
     val jogosAlugados = mutableListOf<Aluguel>()
-    private val listaNota = mutableListOf<Int>()
+    private val listaNotas = mutableListOf<Int>()
     val jogosRecomendados = mutableListOf<Jogo>()
 
     override val media: Double
-        get() = listaNota.average()
+        get() = listaNotas.average()
 
     override fun recomendar(nota: Int) {
-        listaNota.add(nota)
+        listaNotas.add(nota)
     }
 
     fun recomendarJogo(jogo: Jogo, nota: Int) {
@@ -32,11 +34,11 @@ data class Gamer(var nome:String, var email:String) : Recomandavel {
         jogosRecomendados.add(jogo)
     }
 
-
-    constructor(nome: String, email: String, dataNascimento:String, usuario:String):
+    constructor(nome: String, email: String, dataNascimento:String, usuario:String, id: Int = 0):
             this(nome, email) {
         this.dataNascimento = dataNascimento
         this.usuario = usuario
+        this.id = id
         criarIdInterno()
     }
 
@@ -54,7 +56,8 @@ data class Gamer(var nome:String, var email:String) : Recomandavel {
                 "Data Nascimento: $dataNascimento\n" +
                 "Usuario: $usuario\n" +
                 "IdInterno: $idInterno\n" +
-                "Reputação: $media"
+                "Reputação: $media\n" +
+                "Id: $id"
     }
 
     fun criarIdInterno() {

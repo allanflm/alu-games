@@ -25,20 +25,16 @@ fun main() {
     val jogoGod = listaJogoJson.get(7)
     val jogoSkyrim = listaJogoJson.get(18)
 
-
 //    println(gamerCaroline)
 //    println(jogoResidentVillage)
 
     val periodo1 = Periodo(LocalDate.now(), LocalDate.now().plusDays(7))
     val periodo2 = Periodo(LocalDate.now(), LocalDate.now().plusDays(3))
     val periodo3 = Periodo(LocalDate.now(), LocalDate.now().plusDays(10))
-    val periodo4 = Periodo(LocalDate.of(2023, 8, 2), LocalDate.of(2023, 8, 15))
 
     gamerCaroline.alugaJogo(jogoResidentVillage, periodo1)
     gamerCaroline.alugaJogo(jogoSpider, periodo2)
     gamerCaroline.alugaJogo(jogoTheLastOfUs, periodo3)
-    gamerCaroline.alugaJogo(jogoSpider, periodo4)
-
 //    println(gamerCaroline.jogosAlugados)
 
     val gamerCamila = listaGamers.get(5)
@@ -48,6 +44,7 @@ fun main() {
     gamerCamila.alugaJogo(jogoSpider, periodo2)
     gamerCamila.alugaJogo(jogoTheLastOfUs, periodo3)
     gamerCamila.alugaJogo(jogoTheLastOfUs, periodo3)
+//    println(gamerCamila.jogosAlugados)
 
     gamerCamila.recomendar(7)
     gamerCamila.recomendar(10)
@@ -59,6 +56,17 @@ fun main() {
 
     gamerCamila.recomendarJogo(jogoResidentVillage, 7)
     gamerCamila.recomendarJogo(jogoTheLastOfUs, 10)
+
+    gamerCaroline.recomendarJogo(jogoResidentVillage, 8)
+    gamerCaroline.recomendarJogo(jogoTheLastOfUs, 9)
+
+    println("Recomendações da Camila")
+    println(gamerCamila.jogosRecomendados)
+    println("Recomendações da Caroline")
+    println(gamerCaroline.jogosRecomendados)
+
+    gamerCamila.recomendarJogo(jogoResidentVillage, 7)
+    gamerCamila.recomendarJogo(jogoTheLastOfUs, 10)
     gamerCamila.recomendarJogo(jogoAssassins, 8)
     gamerCamila.recomendarJogo(jogoCyber, 7)
     gamerCamila.recomendarJogo(jogoGod, 10)
@@ -66,11 +74,11 @@ fun main() {
     gamerCamila.recomendarJogo(jogoSkyrim, 8)
     gamerCamila.recomendarJogo(jogoSpider, 6)
 
-
     val gson = GsonBuilder().excludeFieldsWithoutExposeAnnotation().create()
     val serializacao = gson.toJson(gamerCamila.jogosRecomendados)
+    println(serializacao)
 
-    val arquivo = File("JogosRecomendados-${gamerCamila.nome}.json")
+    val arquivo = File("jogosRecomendados-${gamerCamila.nome}.json")
     arquivo.writeText(serializacao)
     println(arquivo.absolutePath)
 }
