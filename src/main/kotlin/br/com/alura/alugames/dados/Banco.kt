@@ -7,7 +7,7 @@ import javax.persistence.Persistence
 object Banco {
 //    fun obterConexao(): Connection? {
 //        return try {
-//            DriverManager.getConnection("jdbc:mysql://localhost:3306/alugames", "Allan", "393106a8")
+//            DriverManager.getConnection("jdbc:mysql://localhost:3306/alugames", "root", "aLxXzDcgueZu6z")
 //        } catch (e: SQLException) {
 //            e.printStackTrace()
 //            null
@@ -18,5 +18,4 @@ object Banco {
         val factory: EntityManagerFactory = Persistence.createEntityManagerFactory("alugames")
         return factory.createEntityManager()
     }
-
 }

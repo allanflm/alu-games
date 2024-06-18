@@ -16,21 +16,33 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="fcc0a27f-c382-4ad6-9497-f08dd5eb8b40">
-      <console name="Connection" type="STANDARD" schema="" session="Main" />
+    <connection id="31af2e9c-a3c7-4ec4-8047-515c0ab92cb5">
+      <console name="Connection" type="STANDARD" schema="alugames" session="Main">select
+    j.capa,
+    j.descricao,
+    j.id,
+    j.preco,
+    j.titulo
+from
+    jogos j;</console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="31af2e9c-a3c7-4ec4-8047-515c0ab92cb5" object-ref="schemas/alugames/tables/jogos" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="fcc0a27f-c382-4ad6-9497-f08dd5eb8b40" />
+    <connection id="31af2e9c-a3c7-4ec4-8047-515c0ab92cb5" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="fcc0a27f-c382-4ad6-9497-f08dd5eb8b40" dataset="alugames.jogos" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="31af2e9c-a3c7-4ec4-8047-515c0ab92cb5" dataset="alugames.jogos" active-filter-id="EMPTY_FILTER" />
+  </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
@@ -38,7 +50,7 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="fcc0a27f-c382-4ad6-9497-f08dd5eb8b40" active="true" signed="true">
+      <connection id="31af2e9c-a3c7-4ec4-8047-515c0ab92cb5" active="true" signed="true">
         <database>
           <name value="Connection" />
           <description value="" />
@@ -527,5 +539,9 @@
         </visibility-settings>
       </environment>
     </general-settings>
+  </component>
+  <component name="DBNavigator.Project.StatementExecutionManager">
+    <execution-variables />
+    <execution-variable-types />
   </component>
 </project>
