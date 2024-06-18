@@ -1,6 +1,5 @@
 package br.com.alura.alugames.principal
 
-import br.com.alura.alugames.dados.Banco
 import br.com.alura.alugames.dados.JogosDAO
 import br.com.alura.alugames.modelo.Jogo
 
@@ -12,8 +11,6 @@ fun main() {
         "Uma aventura pós-apocalíptica de sobrevivência em um mundo infestado por zumbis e facções em conflito."
     )
     val jogoDAO = JogosDAO()
-
-    jogoDAO.adicionarJogo(jogo)
 
     val listaJogos: List<Jogo> = jogoDAO.getJogos()
     println(listaJogos)
