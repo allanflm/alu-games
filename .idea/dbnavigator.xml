@@ -17,23 +17,21 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="31af2e9c-a3c7-4ec4-8047-515c0ab92cb5">
-      <console name="Connection" type="STANDARD" schema="alugames" session="Main">select
+      <console name="Connection" type="STANDARD" schema="alugames" session="Main"><![CDATA[select
     j.capa,
     j.descricao,
     j.id,
     j.preco,
     j.titulo
 from
-    jogos j;</console>
+    jogos j;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="31af2e9c-a3c7-4ec4-8047-515c0ab92cb5" object-ref="schemas/alugames/tables/jogos" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="31af2e9c-a3c7-4ec4-8047-515c0ab92cb5" />
