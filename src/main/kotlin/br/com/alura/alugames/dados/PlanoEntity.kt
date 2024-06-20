@@ -6,19 +6,23 @@ import javax.persistence.*
 @Table(name = "planos")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "TipoPlano", discriminatorType = DiscriminatorType.STRING)
-sealed class PlanoEntity(val tipo: String)
+sealed class PlanoEntity(val tipo: String,
+                         @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+                         val id: Int)
 
 @Entity
 @DiscriminatorValue("Avulso")
-class PlanoAvulsoEntity(tipo: String) : PlanoEntity(tipo)
+class PlanoAvulsoEntity(tipo: String = "Plano Avulso",
+                        id: Int) : PlanoEntity(tipo, id)
 
 @Entity
 @DiscriminatorValue("Assinatura")
 class PlanoAssinaturaEntity(
-    tipo: String,
-    val mensalidade: Double,
-    val jogosIncluidos: Int,
-    val percentualDeDesconto: Double
-) : PlanoEntity(tipo) {
+    tipo: String  = "Plano Assinatura ",
+    val mensalidade: Double  = 0.0,
+    val jogosIncluidos: Int = 0,
+    val percentualDeDesconto: Double = 0.0,
+    id: Int,
+) : PlanoEntity(tipo, id) {
 
 }
