@@ -2,16 +2,15 @@ package br.com.alura.alugames.dados
 
 import javax.persistence.EntityManager
 
-abstract class DAO<TModel, TEntity>(val manager: EntityManager, protected val entityType: Class<TEntity>) {
+abstract class DAO <TModel, TEntity>(protected val manager: EntityManager,
+                                     protected val entityType: Class<TEntity>) {
 
     abstract fun toEntity(objeto: TModel): TEntity
     abstract fun toModel(entity: TEntity): TModel
 
-    open fun getlista(): List<TModel> {
+    open fun getLista(): List<TModel> {
         val query = manager.createQuery("FROM ${entityType.simpleName}", entityType)
-        return query.resultList.map { entity ->
-            toModel(entity)
-        }
+        return query.resultList.map { entity -> toModel(entity) }
     }
 
     open fun adicionar(objeto: TModel) {
@@ -20,11 +19,11 @@ abstract class DAO<TModel, TEntity>(val manager: EntityManager, protected val en
         manager.persist(entity)
         manager.transaction.commit()
     }
-
-    open fun recuperarPeloID(id: Int): TModel {
+    open fun recuperarPeloId(id: Int): TModel {
         val query = manager.createQuery("FROM ${entityType.simpleName} WHERE id=:id", entityType)
         query.setParameter("id", id)
         val entity = query.singleResult
+
         return toModel(entity)
     }
 

@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DBNavigator.Project.DDLFileAttachmentManager">
-    <mappings />
-    <preferences />
-  </component>
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="false" />
+    <value-preview-text-wrapping value="true" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -32,9 +28,6 @@ from
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
-  </component>
-  <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="31af2e9c-a3c7-4ec4-8047-515c0ab92cb5" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="31af2e9c-a3c7-4ec4-8047-515c0ab92cb5" dataset="alugames.jogos" active-filter-id="EMPTY_FILTER" />
@@ -65,8 +58,8 @@ from
           <tns-folder value="" />
           <tns-profile value="" />
           <type value="USER_PASSWORD" />
-          <user value="Allan" />
-          <deprecated-pwd value="MzkzMTA2YTg=" />
+          <user value="root" />
+          <deprecated-pwd value="YUx4WHpEY2d1ZVp1Nno=" />
         </database>
         <properties>
           <auto-commit value="false" />
@@ -103,17 +96,8 @@ from
           <max-connection-pool-size value="7" />
           <alternative-statement-delimiter value="" />
         </details>
-        <debugger>
-          <compile-dependencies value="true" />
-          <tcp-driver-tunneling value="false" />
-          <tcp-host-address value="" />
-          <tcp-port-from value="4000" />
-          <tcp-port-to value="4999" />
-          <debugger-type value="ASK" />
-        </debugger>
-        <object-filters hide-empty-schemas="false" hide-pseudo-columns="false" hide-audit-columns="false">
-          <object-filters />
-          <object-type-filter use-master-settings="true">
+        <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
+          <object-type-filter>
             <object-type name="SCHEMA" enabled="true" />
             <object-type name="USER" enabled="true" />
             <object-type name="ROLE" enabled="true" />
@@ -140,6 +124,7 @@ from
             <object-type name="CLUSTER" enabled="true" />
             <object-type name="DBLINK" enabled="true" />
           </object-type-filter>
+          <object-name-filters />
         </object-filters>
       </connection>
     </connections>
@@ -148,7 +133,6 @@ from
         <display-mode value="TABBED" />
         <navigation-history-size value="100" />
         <show-object-details value="false" />
-        <enable-sticky-paths value="true" />
       </general>
       <filters>
         <object-type-filter>
@@ -275,6 +259,7 @@ from
           <content-type name="JSON" enabled="true" />
           <content-type name="JSON5" enabled="true" />
           <content-type name="Groovy" enabled="true" />
+          <content-type name="AIDL" enabled="true" />
           <content-type name="YAML" enabled="true" />
           <content-type name="Manifest" enabled="true" />
         </content-types>
@@ -293,7 +278,6 @@ from
       <confirmations>
         <save-changes value="false" />
         <revert-changes value="true" />
-        <exit-on-changes value="ASK" />
       </confirmations>
     </code-editor-settings>
     <code-completion-settings>
@@ -478,7 +462,7 @@ from
           <on-autocommit-toggle value="ASK" />
         </uncommitted-changes>
         <multiple-uncommitted-changes>
-          <on-commit value="ASK" />
+          <on-commit value="COMMIT" />
           <on-rollback value="ASK" />
         </multiple-uncommitted-changes>
       </transactions>
@@ -492,6 +476,10 @@ from
         <compile-dependencies value="ASK" />
         <always-show-controls value="false" />
       </compiler>
+      <debugger>
+        <debugger-type value="ASK" />
+        <use-generic-runners value="true" />
+      </debugger>
     </operation-settings>
     <ddl-file-settings>
       <extensions>
@@ -540,6 +528,5 @@ from
   </component>
   <component name="DBNavigator.Project.StatementExecutionManager">
     <execution-variables />
-    <execution-variable-types />
   </component>
 </project>

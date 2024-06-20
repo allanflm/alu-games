@@ -13,15 +13,15 @@ fun main() {
     val diamante = PlanoAssinatura("DIAMANTE", 49.90, 20, 0.50)
 
     val manager = Banco.getEntityManager()
-    val planoDAO = PlanosDAO(manager)
+    val planosDAO = PlanosDAO(manager)
 
-    planoDAO.adicionar(avulso)
-    planoDAO.adicionar(prata)
-    planoDAO.adicionar(ouro)
-    planoDAO.adicionar(platina)
-    planoDAO.adicionar(diamante)
+    planosDAO.adicionar(avulso)
+    planosDAO.adicionar(prata)
+    planosDAO.adicionar(ouro)
+    planosDAO.adicionar(platina)
+    planosDAO.adicionar(diamante)
 
-    val listaPlanos = planoDAO.getlista()
+    val listaPlanos = planosDAO.getLista()
     println(listaPlanos)
 
     manager.close()
